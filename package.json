@@ -1,0 +1,26 @@
+{
+  "name": "netflix-clone",
+  "version": "1.0.0",
+  "description": "a netflix clone",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inklein1997/Netflix-Clone.git"
+  },
+  "keywords": [
+    "react",
+    "netflix-clone",
+    "express",
+    "mysql"
+  ],
+  "author": "Michael Klein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inklein1997/Netflix-Clone/issues"
+  },
+  "homepage": "https://github.com/inklein1997/Netflix-Clone#readme"
+}
