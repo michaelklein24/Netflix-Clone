@@ -18,14 +18,15 @@ const sectionData = [{ text1: "Enjoy on your TV.", text2: "Watch on Smart TVs, P
 const LandingPage = () => {
     return <Fragment>
         <Header />
-        <Section className={classes.section}>
+        {sectionData.map(section => {
+            return <Section className={classes.section}>
             <div>
-                <h2>Enjoy on your TV.</h2>
-                <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+                <h2>{section.text1}</h2>
+                <p>{section.text2}</p>
             </div>
-            <img src={tvPic} />
-
+            <img src={section.img} />
         </Section>
+        })}
     </Fragment>
 }
 

@@ -2,17 +2,21 @@
     border-bottom:  8px #222 solid;
     background-color: #000000;
     color: white;
-}
-
-.div {
     display: flex;
+    padding: 0 15% 0 15%;
+    line-height: 1.4;
+}
+.div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .div div h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 3.125rem;
+    font-weight: 700;
 }
 
 .div div p {
-    font-size: 1.25rem;
+    font-size: 1.625rem;
 }
