@@ -1,0 +1,59 @@
+.main {
+    overflow-x: hidden;
+    width: 100vw;
+    height: 70vh;
+    background: url("../../images/landing-background.png");
+    box-shadow: inset 0 0 0 1000px rgb(0, 0, 0, 0.4);
+    position:relative;
+    border-bottom:  8px #222 solid;
+}
+
+.header {
+    display: flex;
+    margin: 20px 40px;
+    justify-content: space-between;
+}
+
+.header img {
+    width: 15vw;
+}
+
+.header button {
+    color: white;
+    align-self: center;
+    background-color: #e50914;
+}
+
+.main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin: 85px auto 0 auto;
+    text-align: center;
+    max-width: 640px;
+}
+
+.main form h1 {
+    font-size: 3.125rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.main form h2 {
+    font-size: 1.625rem;
+    margin: 1rem auto;
+}
+
+.main form h3 {
+    font-size: 1.4rem;
+    max-width: 500px;
+}
+
+.main form input {
+    height: 48px;
+    margin: 16px 0;
+    padding: 0 10px;
+    font-size: 18px;
+    width: 100%;
+}
