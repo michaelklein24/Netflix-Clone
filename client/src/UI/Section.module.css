@@ -12,6 +12,10 @@
     justify-content: center;
 }
 
+.div:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
 .div div h2 {
     font-size: 3.125rem;
     font-weight: 700;
@@ -20,3 +24,33 @@
 .div div p {
     font-size: 1.625rem;
 }
+
+@media screen and (max-width: 1450px) {
+    .div div h2 {
+        font-size: 2.425rem;
+        line-height: 1.1;
+    }
+    .div div p {
+        font-size: 1.125rem;
+    }
+    .div img {
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .div {
+        flex-direction: column!important;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .div div {
+        text-align: center;
+        line-height: 1.1;
+        gap: 10px
+    }
+    .div img {
+        width: auto;
+    }
+}
+

@@ -1,11 +1,12 @@
 .main {
     overflow-x: hidden;
-    width: 100vw;
-    height: 70vh;
+    height: 80vh;
     background: url("../../images/landing-background.png");
     box-shadow: inset 0 0 0 1000px rgb(0, 0, 0, 0.4);
     position:relative;
     border-bottom:  8px #222 solid;
+    overflow-x: hidden;
+    background-size: cover;
 }
 
 .header {
@@ -15,7 +16,7 @@
 }
 
 .header img {
-    width: 15vw;
+    height: 40px;
 }
 
 .header button {
@@ -28,10 +29,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     color: white;
-    margin: 85px auto 0 auto;
+    margin: auto;
     text-align: center;
     max-width: 640px;
+    height: calc(80vh - 150px);
 }
 
 .main form h1 {
@@ -56,4 +59,10 @@
     padding: 0 10px;
     font-size: 18px;
     width: 100%;
+}
+
+@media screen and (max-width:900px) {
+    .main form {
+        max-width: 80vw;
+    }
 }
