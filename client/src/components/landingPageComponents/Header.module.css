@@ -55,10 +55,17 @@
 
 .main form input {
     height: 48px;
-    margin: 16px 0;
+    margin-top: 16px;
     padding: 0 10px;
     font-size: 18px;
-    width: 100%;
+    width: calc(100% - 20px);
+}
+
+.main form p {
+    color: #ffa00a;
+    font-size: 16px;
+    margin-bottom: 16px;
+    align-self: start;
 }
 
 @media screen and (max-width:900px) {

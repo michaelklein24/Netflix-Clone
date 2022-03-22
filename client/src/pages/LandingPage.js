@@ -2,8 +2,6 @@ import { Fragment } from 'react'
 import Header from '../components/landingPageComponents/Header'
 import Section from '../UI/Section'
 
-import classes from './LandingPage.module.css'
-
 import tvPic from '../images/tv.png'
 import phonePic from '../images/phone.jpg'
 import mediaPic from '../images/media.png'
@@ -18,8 +16,8 @@ const sectionData = [{ text1: "Enjoy on your TV.", text2: "Watch on Smart TVs, P
 const LandingPage = () => {
     return <Fragment>
         <Header />
-        {sectionData.map(section => {
-            return <Section className={classes.section}>
+        {sectionData.map((section, i) => {
+            return <Section key={i}>
             <div>
                 <h2>{section.text1}</h2>
                 <p>{section.text2}</p>
