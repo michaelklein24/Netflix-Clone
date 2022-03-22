@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "find-config": "^1.0.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0"
+  }
+}
