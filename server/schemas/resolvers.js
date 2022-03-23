@@ -5,42 +5,45 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
     Query: {
         users: async () => {
-            return User.find();
-        },
-        user: async (parent, { username }) => {
-            return User.findOne({ username });
+            return User.findAll();
         },
         me: async (parent, args, context) => {
             // console.log(context.user)
             if (context.user) {
-                return User.findOne({ _id: context.user._id });
+                return User.findOne({ id: context.user.id });
             }
             throw new AuthenticationError("You need to be logged in!");
         },
     },
     Mutation: {
-        addUser: async (parent, args) => {
-            const user = await User.create(args);
-            const token = signToken(user);
-            return { token, user };
+        addUser: async (parent, { firstName, lastName, email, password }) => {
+            const userData = await User.create({
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password
+            });
+            const token = signToken(userData);
+            return { token, userData };
         },
         login: async (parent, { email, password }) => {
-            const user = await User.findOne({ email });
+            const userData = await User.findOne({
+                where: { email: email }
+            });
 
-            if (!user) {
+            if (!userData) {
                 throw new AuthenticationError("No user found with this email address");
             }
 
-            const correctPw = await user.isCorrectPassword(password);
+            const validPassword = await userData.checkPassword(password);
 
-            if (!correctPw) {
-                throw new AuthenticationError("Incorrect credentials");
+            if (!validPassword) {
+                throw new AuthenticationError("Incorrect password");
+                return
             }
-            console.log("-----------------")
-            console.log(user)
-            const token = signToken(user);
+            const token = signToken(userData);
 
-            return { token, user };
+            return { token, userData };
         },
     }
 }
