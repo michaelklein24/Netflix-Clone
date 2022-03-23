@@ -12,7 +12,6 @@ if (process.env.JAWSDB_URL) {
     }
   })
 } else {
-
   sequelize = new Sequelize(
     // process.env.DB_NAME,
     // process.env.DB_USER,
