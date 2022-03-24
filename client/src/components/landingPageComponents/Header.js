@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import netflixLogo from '../../images/netflix-logo.png'
 import Button from '../../UI/Button'
@@ -24,7 +25,7 @@ const Header = () => {
     return <main className={classes.main}>
         <header className={classes.header}>
             <img src={netflixLogo} />
-            <Button>Log In</Button>
+            <NavLink to="/login"><Button>Log In</Button></NavLink>
         </header>
         <form onSubmit={submitHandler}>
             <h1>Unlimited movies, TV shows, and more.</h1>
