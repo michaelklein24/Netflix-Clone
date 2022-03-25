@@ -1,6 +1,6 @@
 .main {
     overflow-x: hidden;
-    height: 80vh;
+    height: 709px;
     background: url("../../images/landing-background.png");
     box-shadow: inset 0 0 0 1000px rgb(0, 0, 0, 0.4);
     position:relative;
@@ -31,10 +31,10 @@
     align-items: center;
     justify-content: center;
     color: white;
-    margin: auto;
+    margin: 100px auto;
     text-align: center;
     max-width: 640px;
-    height: calc(80vh - 150px);
+    /* height: calc(80vh - 150px); */
 }
 
 .main form h1 {
@@ -71,5 +71,17 @@
 @media screen and (max-width:900px) {
     .main form {
         max-width: 80vw;
+    }
+}
+
+@media screen and (max-width:346px) {
+    .header button {
+        padding:10px 10px;
+    }
+}
+
+@media screen and (max-width: 494px) {
+    .main form {
+        margin: 50px auto
     }
 }

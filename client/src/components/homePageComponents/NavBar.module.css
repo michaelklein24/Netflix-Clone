@@ -17,3 +17,12 @@
     width: 80px;
     object-fit: contain;
 }
+
+
+
+
+@media screen and (max-width: 408px) {
+.nav__button {
+  padding: 0.25rem 0.5rem;
+}
+}

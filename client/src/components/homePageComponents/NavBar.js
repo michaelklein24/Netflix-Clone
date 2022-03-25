@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <div className={`${classes.nav} ${show && classes.nav__black}`}>
       <img className={classes.nav__logo} src={netflixLogo} alt="netflix logo" />
-      <Button onClick={() => Auth.logout()}>Sign Out</Button>
+      <Button className={classes.nav__button} onClick={() => Auth.logout()}>Sign Out</Button>
     </div>
   );
 };

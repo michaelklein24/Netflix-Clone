@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import classes from './LogIn.module.css'
@@ -13,6 +13,10 @@ import Auth from "../utils/Auth";
 const LogIn = () => {
     const [formState, setFormState] = useState({ email: "", password: "" })
     const [loginUser] = useMutation(LOGIN_USER);
+
+    useEffect(() => {
+        window.localStorage.removeItem("email")
+    }, []);
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -44,31 +48,35 @@ const LogIn = () => {
         }
     }
 
-    return <main className={classes.main}>
-        <img src={netflixLogo} />
+    return (
+      <main className={classes.main}>
+        <div className={classes.netflixLogo}>
+          {/* <img src={netflixLogo} /> */}
+        </div>
         <form onSubmit={submitHandler}>
-            <h1>Log In</h1>
-            <input
-                type="email"
-                placeholder="Email address"
-                name="email"
-                value={formState.email}
-                onChange={handleChange}
-            ></input>
-            <input
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={formState.password}
-                onChange={handleChange}
-            ></input>
-            <Button type="submit">Sign In</Button>
-            <div>
-                <p>New to Netflix?</p>
-                <NavLink to="/SignUp">Sign up now.</NavLink>
-            </div>
+          <h1>Log In</h1>
+          <input
+            type="email"
+            placeholder="Email address"
+            name="email"
+            value={formState.email}
+            onChange={handleChange}
+          ></input>
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={formState.password}
+            onChange={handleChange}
+          ></input>
+          <Button type="submit">Sign In</Button>
+          <div>
+            <p>New to Netflix?</p>
+            <NavLink to="/SignUp">Sign up now.</NavLink>
+          </div>
         </form>
-    </main>
+      </main>
+    );
 }
 
 export default LogIn

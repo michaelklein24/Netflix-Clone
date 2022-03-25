@@ -14,7 +14,7 @@ const SignUp = () => {
   const [formState, setFormState] = useState(() => {
     let emailInput = window.localStorage.getItem("email");
     return {
-      email: emailInput,
+      email: emailInput || "",
       password: "",
       firstName: "",
       lastName: "",
@@ -63,7 +63,9 @@ const SignUp = () => {
 
   return (
     <main className={classes.main}>
-      <img src={netflixLogo} />
+      <div className={classes.netflixLogo}>
+        {/* <img src={netflixLogo} /> */}
+      </div>
       <form onSubmit={submitHandler}>
         <h1>Sign Up</h1>
         <div className={classes.nameInputs}>

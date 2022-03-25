@@ -57,7 +57,7 @@ const Header = () => {
           }
         />
         {!isValidEmail && <p>Please enter a valid email address</p>}
-        <Button type="submit">Get Started</Button>
+        <Button className={classes.header__button}type="submit">Get Started</Button>
       </form>
     </main>
   );
