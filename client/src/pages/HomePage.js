@@ -13,12 +13,17 @@ const HomePage = () => {
     <div className={classes.homePage}>
       <NavBar />
       <Banner />
-      <Row
+      {/* <Row
         title="NETFLIX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow
+      /> */}
+      <Row
+        title="Trending Now"
+        fetchUrl={requests.fetchTrending}
+        id="1"
+        isLargeRow
       />
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending} id="1" />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated} id="2" />
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} id="3" />
       <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} id="4" />
