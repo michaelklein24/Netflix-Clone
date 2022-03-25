@@ -8,7 +8,7 @@
 }
 
 .main img {
-    height: 50px;
+     height: 40px;
     margin: 30px;
 }
 
@@ -20,7 +20,7 @@
     flex-direction: column;
     background-color: rgb(0, 0, 0, 0.7);
     padding: 60px 68px;
-    width: 314px;
+    width: 500px;
 }
 
 .main form h1 {

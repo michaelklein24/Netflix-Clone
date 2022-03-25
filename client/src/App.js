@@ -15,7 +15,7 @@ import SignUp from './pages/SignUp'
 import './App.css';
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3000/graphql",
+  uri: "http://localhost:3001/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -41,9 +41,6 @@ function App() {
     <ApolloProvider client={client}>
       <Switch>
         <Route path="/" exact>
-          <Redirect to='/landing' />
-        </Route>
-        <Route path="/landing" exact>
           <LandingPage />
         </Route>
         <Route path="/home" exact>
