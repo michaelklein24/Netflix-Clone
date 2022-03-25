@@ -1,37 +1,65 @@
 .row {
-    margin: 10px;
-    color: white;
+  margin: 10px;
+  color: white;
 }
 
 .row__posters {
-    display: flex;
-    gap:10px;
-    /* width:100vw; */
-    overflow-y: hidden;
-    overflow-x: scroll;
-    padding: 10px;
+  display: flex;
+  gap: 10px;
+  /* width:100vw; */
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 10px;
 }
 
 .row__posters::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .row__poster {
-    width: 100%;
-    object-fit: contain;
-    max-height: 100px;
-    transition: transform 450ms;
+  width: 200px;
+  object-fit: contain;
+  max-height: 100px;
+  transition: transform 450ms;
 }
 
 .row__poster:hover {
-    transform: scale(1.08);
-    cursor: pointer;
+  transform: scale(1.08);
+  cursor: pointer;
 }
 
 .row__posterLarge {
-    max-height: 250px;
+  max-height: 250px;
+  width: 150px;
 }
 
 .row__posterLarge::hover {
-    transform: scale(1.09);
+  transform: scale(1.09);
+}
+
+.poster__title__hide {
+  position: absolute;
+  width: calc(100% + 20px);
+  text-align: center;
+  opacity: 0;
+  left:-10px;
+  /* transition: all 300ms; */
+}
+
+.poster__title__shown {
+  opacity: 1;
+  position: absolute;
+  width: calc(100% + 20px);
+  text-align: center;
+  /* transform: translateY(-10px); */
+  padding: 20px 0;
+  bottom: -10px;
+  transition: all 300ms;
+  padding: top;
+  left:-10px;
+  background: linear-gradient(transparent, #111111);
+}
+
+.poster__container {
+  position: relative;
 }
