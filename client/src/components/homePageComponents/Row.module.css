@@ -59,7 +59,7 @@
   padding: 20px 0;
   bottom: -10px;
   transition: all 300ms;
-  padding: top;
+  /* padding: top; */
   left: -10px;
   background: linear-gradient(transparent, #111111);
 }
