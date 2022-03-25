@@ -6,7 +6,7 @@
 .row__posters {
     display: flex;
     gap:10px;
-    width:100vw;
+    /* width:100vw; */
     overflow-y: hidden;
     overflow-x: scroll;
     padding: 10px;

@@ -1,4 +1,5 @@
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Fragment } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,12 +8,11 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-
-import LandingPage from './pages/LandingPage';
-import HomePage from './pages/HomePage'
-import LogIn from './pages/LogIn'
-import SignUp from './pages/SignUp'
-import './App.css';
+import LandingPage from "./pages/LandingPage";
+import HomePage from "./pages/HomePage";
+import LogIn from "./pages/LogIn";
+import SignUp from "./pages/SignUp";
+import "./App.css";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
@@ -34,26 +34,31 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const token = localStorage.getItem("id_token")
+const token = localStorage.getItem("id_token");
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <Switch>
-        <Route path="/" exact>
-          <LandingPage />
-        </Route>
-        <Route path="/home" exact>
-          <HomePage />
-        </Route>
-        <Route path="/login" exact>
-          <LogIn />
-        </Route>
-        <Route path="/signup" exact>
-          <SignUp />
-        </Route>
-      </Switch>
-    </ApolloProvider>
+    <Fragment>
+      {!token ? (
+        <ApolloProvider client={client}>
+          <Switch>
+            <Route path="/" exact>
+              <LandingPage />
+            </Route>
+            <Route path="/login" exact>
+              <LogIn />
+            </Route>
+            <Route path="/signup" exact>
+              <SignUp />
+            </Route>
+          </Switch>
+        </ApolloProvider>
+      ) : (
+        <ApolloProvider client={client}>
+            <HomePage />
+        </ApolloProvider>
+      )}
+    </Fragment>
   );
 }
 
