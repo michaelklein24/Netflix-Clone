@@ -11,11 +11,11 @@ const Header = () => {
   const [isValidEmail, setIsValidEmail] = useState(true);
 
   const submitHandler = (e) => {
-    window.localStorage.removeItem("email");
     e.preventDefault();
+    window.localStorage.removeItem("email");
     window.localStorage.setItem("email", email);
 
-    window.location.href = "/signup";
+    window.location.assign("/signup");
   };
 
   const emailHandler = () => {
@@ -57,7 +57,7 @@ const Header = () => {
           }
         />
         {!isValidEmail && <p>Please enter a valid email address</p>}
-        <Button className={classes.header__button}type="submit">Get Started</Button>
+        <Button className={classes.header__button} type="submit">Get Started</Button>
       </form>
     </main>
   );
