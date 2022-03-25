@@ -4,13 +4,14 @@ import Row from "../components/homePageComponents/Row";
 import requests from "../utils/requests";
 
 import Banner from '../components/homePageComponents/Banner'
+import NavBar from '../components/homePageComponents/NavBar'
 
 import classes from './HomePage.module.css'
 
 const HomePage = () => {
   return (
     <div className={classes.homePage}>
-        {/* NavBar */}
+        <NavBar />
         <Banner />
       <Row
         title="NETFLIX ORIGINALS"

@@ -24,7 +24,7 @@ const Banner = () => {
   const truncate = (str, n) => {
       return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
-  
+
   return (
     <header
       className={classes.banner}
@@ -44,6 +44,7 @@ const Banner = () => {
             {truncate(movie?.overview, 150)}
         </h2>
       </div>
+      <div className={classes.banner__fadeBottom} />
     </header>
   );
 };
