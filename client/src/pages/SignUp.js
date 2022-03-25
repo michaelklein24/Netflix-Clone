@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import classes from "./SignUp.module.css";
@@ -9,10 +9,11 @@ import Button from "../UI/Button";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/Auth";
+import { UserContext } from "../store/user-context";
 
 const SignUp = () => {
+  const [emailInput, setEmailInput] = useContext(UserContext);
   const [formState, setFormState] = useState(() => {
-    let emailInput = window.localStorage.getItem("email");
     return {
       email: emailInput || "",
       password: "",

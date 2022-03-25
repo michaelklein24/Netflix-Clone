@@ -1,22 +1,22 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import netflixLogo from "../../images/netflix-logo.png";
 import Button from "../../UI/Button";
 
 import classes from "./Header.module.css";
+import { UserContext } from "../../store/user-context";
 
 const Header = () => {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
+  const [emailInput, setEmailInput] = useContext(UserContext);
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    window.localStorage.removeItem("email");
-    window.localStorage.setItem("email", email);
-
-    window.location.assign("/signup");
-  };
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+  //   window.localStorage.removeItem("email");
+  //   window.localStorage.setItem("email", email);
+  // };
 
   const emailHandler = () => {
     let regex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
@@ -33,7 +33,7 @@ const Header = () => {
           <Button>Log In</Button>
         </NavLink>
       </header>
-      <form onSubmit={submitHandler}>
+      <form>
         <h1>Unlimited movies, TV shows, and more.</h1>
         <h2>Watch anywhere. Cancel anytime.</h2>
         <h3>
@@ -43,7 +43,10 @@ const Header = () => {
           type="text"
           placeholder="Email address"
           onBlur={emailHandler}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value)
+            setEmailInput(e.target.value)
+          }}
           value={email}
           // style={!isValidEmail && {borderBottom:"yellow"}}
           style={
@@ -57,7 +60,11 @@ const Header = () => {
           }
         />
         {!isValidEmail && <p>Please enter a valid email address</p>}
-        <Button className={classes.header__button} type="submit">Get Started</Button>
+        <NavLink to="/signup">
+          <Button className={classes.header__button}>
+            Get Started
+          </Button>
+        </NavLink>
       </form>
     </main>
   );

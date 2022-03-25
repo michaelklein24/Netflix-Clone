@@ -14,6 +14,8 @@ import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import "./App.css";
 
+import UserContextProvider from "./store/user-context";
+
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
 });
@@ -41,21 +43,23 @@ function App() {
     <Fragment>
       {!token ? (
         <ApolloProvider client={client}>
-          <Switch>
-            <Route path="/" exact>
-              <LandingPage />
-            </Route>
-            <Route path="/login" exact>
-              <LogIn />
-            </Route>
-            <Route path="/signup" exact>
-              <SignUp />
-            </Route>
-          </Switch>
+          <UserContextProvider>
+            <Switch>
+              <Route path="/" exact>
+                <LandingPage />
+              </Route>
+              <Route path="/login" exact>
+                <LogIn />
+              </Route>
+              <Route path="/signup" exact>
+                <SignUp />
+              </Route>
+            </Switch>
+          </UserContextProvider>
         </ApolloProvider>
       ) : (
         <ApolloProvider client={client}>
-            <HomePage />
+          <HomePage />
         </ApolloProvider>
       )}
     </Fragment>
